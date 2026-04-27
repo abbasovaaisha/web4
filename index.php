@@ -21,7 +21,7 @@ function connectToDatabase() {
     }
     return $db;
 }
-
+//----------список языков из бд----------
 function getLanguageList() {
     $pdo = connectToDatabase();
     $stmt = $pdo->query("SELECT id, name FROM programming_languages ORDER BY name");
@@ -29,7 +29,7 @@ function getLanguageList() {
 }
 
 // ---------- Вспомогательные функции для Cookies ----------
-function setJsonCookie($name, $data, $expire = 0) {
+function setJsonCookie($name, $data, $expire = 0) {//изменение
     setcookie($name, json_encode($data, JSON_UNESCAPED_UNICODE), $expire, '/', '', false, true);
 }
 
@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Флаг успешного сохранения для flash-сообщения
             setJsonCookie('success_flash', ['message' => 'Данные успешно сохранены!'], 0);
 
-            header('Location: ' . $_SERVER['SCRIPT_NAME']);
+            header('Location: ' . $_SERVER['SCRIPT_NAME']);//редирект на саму же php
             exit;
         } catch (Exception $e) {
             $pdo->rollBack();
