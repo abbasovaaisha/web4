@@ -161,7 +161,7 @@
         </form>
 
         <div class="nav-links">
-            <a href="view.php">📋 Просмотр сохранённых анкет</a>
+            <a href="prosmotr.php">📋 Просмотр сохранённых анкет</a>
             
         </div>
     </div>
